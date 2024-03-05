@@ -1,4 +1,4 @@
-public class Tortoise extends Racer
+public class Tortoise extends AbstractRacer
 {
     public Tortoise(String  name)
     {

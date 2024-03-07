@@ -29,7 +29,7 @@ public abstract class AbstractRacer
  */
  public String toString()
  {
-    return super.toString() + "Name= [" + name + "]" + " Position= [" + position + "]";
+    return super.toString() + "Name= [" + name + "]" + " Position= [" + position + "] \n";
  }
  /**
  * The getPosition() method returns the current position

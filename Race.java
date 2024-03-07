@@ -1,19 +1,20 @@
-public class Racer
+import java.util.ArrayList;
+public class Race
 {
-    private ArrayList<Racers> contestants;
-    private int Distance;
-
+    private ArrayList<AbstractRacer> contestants;
+    private final int DISTANCE;
+    private boolean ended;
     public Race(int distance)
     {
         DISTANCE = distance;
-        contestants = new ArrayList<Racer>();
+        contestants = new ArrayList<AbstractRacer>();
     }
-    public void addContestant(Racer r)
+    public void addContestant(AbstractRacer r)
     {
         contestants.add(r);
     }
    
-    public ArrayList<Racer> getContestants()
+    public ArrayList<AbstractRacer> getContestants()
     {
         return contestants;
     }
@@ -25,24 +26,25 @@ public class Racer
     public void tick()
     {
         for (AbstractRacer r : contestants)
-        [
+        {
             r.move();
-        ]
+        }
     }
     public String toString()
     {
-        String result = "---------\nCURRENT RACE STATS\n"
+        String result = "---------\nCURRENT RACE STATS\n";
         for (AbstractRacer r : contestants)
         {
-            
+            result += r.toString();
         }
+        return result;
     }
     public void runRace()
     {
         while (ended == false)
         {
             System.out.println("Test");
-            for (Racer racer : contestants)
+            for (AbstractRacer racer : contestants)
             {
                 racer.move();
                 System.out.println(racer.toString());

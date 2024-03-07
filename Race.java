@@ -24,7 +24,7 @@ public class Racer
     }
     public void tick()
     {
-        for (Racer r : contestants)
+        for (AbstractRacer r : contestants)
         [
             r.move();
         ]
@@ -32,11 +32,28 @@ public class Racer
     public String toString()
     {
         String result = "---------\nCURRENT RACE STATS\n"
-        for (Racer r : contestants)
+        for (AbstractRacer r : contestants)
         {
             
         }
     }
+    public void runRace()
+    {
+        while (ended == false)
+        {
+            System.out.println("Test");
+            for (Racer racer : contestants)
+            {
+                racer.move();
+                System.out.println(racer.toString());
+                if (racer.getPosition() >= DISTANCE)
+                {
+                    ended = true;
+                }
+            }           
+        }
+    }
 }
+
 
 

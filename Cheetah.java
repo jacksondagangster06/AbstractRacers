@@ -1,12 +1,12 @@
 public class Cheetah extends AbstractRacer
 {
-    private boolean acl;
+    private boolean aclT;
     private int aclChance;
 
     public Cheetah(String name)
     {
         super(name);
-        acl = false;
+        aclT = true;
         aclChance = (int) ((Math.random() * 3) + 1);
     }
 
@@ -14,10 +14,10 @@ public class Cheetah extends AbstractRacer
     {
         if(aclChance == 3)
         {
-            acl = true;
+            aclT = false;
         }
         setPosition(getPosition() + 8);
-        if(getPosition() > 50 && acl)
+        if(getPosition() > 50 && aclT)
         {
             setPosition(getPosition() + 0);
         }

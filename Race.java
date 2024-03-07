@@ -18,7 +18,7 @@ public class Race
     {
         return contestants;
     }
-   
+    
     public int getDistance()
     {
         return DISTANCE;

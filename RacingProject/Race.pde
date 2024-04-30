@@ -30,6 +30,29 @@ public class Race
             r.move();
         }
     }
+    
+    public boolean isGoing()
+    {
+        return !ended;
+    }
+    
+    public AbstractRacer getWinner()
+    {
+        if(!isGoing())
+        {
+            int winner = 0;
+            for(int i = 0; i < contestants.size(); i++)
+            {
+                if(contestants.get(i).getPosition() > contestants.get(winner).getPosition())
+                {
+                    winner = i;
+                }
+            }
+            return contestants.get(winner);
+        }
+        return null;
+    }
+    
     public String toString()
     {
         String result = "---------\nCURRENT RACE STATS\n";
@@ -38,11 +61,6 @@ public class Race
             result += r.toString();
         }
         return result;
-    }
-
-    public boolean isGoing()
-    {
-        return !ended;
     }
     public void runRace()
     {
@@ -57,10 +75,9 @@ public class Race
                 {
                     ended = true;
                 }
-            }           
+            }
+            //System.out.println(this.getWinner());
         }
+        
     }
 }
-
-
-
